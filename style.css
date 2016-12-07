@@ -1,0 +1,14 @@
+.pinkColor{
+    color:#fcd9fa;
+}
+body{
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+img{
+    display:block;
+}
+#cityInput, button{
+    color:black;
+}
