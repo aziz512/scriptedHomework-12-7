@@ -60,24 +60,24 @@ function changeWeatherBackground(city){
         city = "new york";
     }
     $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=e83b3c4c08285bf87b99f9bbc0abe3f0', (data) => {
-                let weatherType = data.weather[0].main;
-                console.log(weatherType);
-                let backgroundUrl = '';
-                switch (weatherType) {
-                    case 'Clouds':
-                        backgroundUrl = 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Cloudy_weather,nashik.jpg';
-                        break;
-                    case 'Rain':
-                        backgroundUrl = 'http://efdreams.com/data_images/dreams/rain/rain-02.jpg';
-                        break;
-                    case 'Clear':
-                        backgroundUrl = 'https://icons.wxug.com/data/wximagenew/k/Klockheed/2.jpg';
-                        break;
-                    
-                    default:
-                        backgroundUrl = 'https://upload.wikimedia.org/wikipedia/commons/2/22/New_York_City_at_night_HDR.jpg';
-                }
-                $('body').css('background-image', 'url("' + backgroundUrl + '")');
-                addLog('weather background changed');
+        let weatherType = data.weather[0].main;
+        console.log(weatherType);
+        let backgroundUrl = '';
+        switch (weatherType) {
+            case 'Clouds':
+                backgroundUrl = 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Cloudy_weather,nashik.jpg';
+                break;
+            case 'Rain':
+                backgroundUrl = 'http://efdreams.com/data_images/dreams/rain/rain-02.jpg';
+                break;
+            case 'Clear':
+                backgroundUrl = 'https://icons.wxug.com/data/wximagenew/k/Klockheed/2.jpg';
+                break;
+            
+            default:
+                backgroundUrl = 'https://upload.wikimedia.org/wikipedia/commons/2/22/New_York_City_at_night_HDR.jpg';
+        }
+        $('body').css('background-image', 'url("' + backgroundUrl + '")');
+        addLog('weather background changed');
     });
 }
